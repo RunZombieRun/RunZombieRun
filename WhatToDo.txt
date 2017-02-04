@@ -1,0 +1,18 @@
+PlayerController:
+-
+-
+-
+-
+-
+EnemyBehaviour:
+-
+-
+-
+-
+
+EnvironmentBehaviour:
+-
+-
+-
+-
+(Это окружение,т.е. объекты с которыми сталкиваемся и тд)
