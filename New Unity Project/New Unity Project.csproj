@@ -1,0 +1,238 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BFD958C4-5209-89E8-D1A0-F25854A4DC74}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AssemblyName>Assembly-CSharp</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
+    <CompilerResponseFile></CompilerResponseFile>
+    <UnityProjectType>Game:1</UnityProjectType>
+    <UnityBuildTarget>StandaloneWindows:5</UnityBuildTarget>
+    <UnityVersion>5.5.0p4</UnityVersion>
+    <RootNamespace></RootNamespace>
+    <LangVersion Condition=" '$(VisualStudioVersion)' != '10.0' ">4</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Temp\UnityVS_bin\Debug\</OutputPath>
+    <IntermediateOutputPath>Temp\UnityVS_obj\Debug\</IntermediateOutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_5_0;UNITY_5_5;UNITY_5;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_GENERICS;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;INCLUDE_PUBNUB;ENABLE_PLAYMODE_TESTS_RUNNER;ENABLE_SCRIPTING_NEW_CSHARP_COMPILER;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_EVENT_QUEUE;ENABLE_CLUSTERINPUT;ENABLE_VIDEO;ENABLE_VR;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;UNITY_TEAM_LICENSE;ENABLE_VSTU;CROSS_PLATFORM_INPUT</DefineConstants>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Temp\UnityVS_bin\Release\</OutputPath>
+    <IntermediateOutputPath>Temp\UnityVS_obj\Release\</IntermediateOutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DefineConstants>TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_5_0;UNITY_5_5;UNITY_5;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_GENERICS;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;INCLUDE_PUBNUB;ENABLE_PLAYMODE_TESTS_RUNNER;ENABLE_SCRIPTING_NEW_CSHARP_COMPILER;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_EVENT_QUEUE;ENABLE_CLUSTERINPUT;ENABLE_VIDEO;ENABLE_VR;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;UNITY_TEAM_LICENSE;ENABLE_VSTU;CROSS_PLATFORM_INPUT</DefineConstants>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+    <Reference Include="System" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Core" />
+    <Reference Include="Boo.Lang" />
+    <Reference Include="UnityScript.Lang" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="UnityEngine">
+      <HintPath>Library\UnityAssemblies\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Networking">
+      <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.PlaymodeTestsRunner">
+      <HintPath>Library\UnityAssemblies\UnityEngine.PlaymodeTestsRunner.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Analytics">
+      <HintPath>Library\UnityAssemblies\UnityEngine.Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.HoloLens">
+      <HintPath>Library\UnityAssemblies\UnityEngine.HoloLens.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VR">
+      <HintPath>Library\UnityAssemblies\UnityEngine.VR.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor">
+      <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Common">
+      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="VacuumShaders.CurvedWorld">
+      <HintPath>Assets\VacuumShaders\Curved World\Scripts\VacuumShaders.CurvedWorld.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Assets\Run_Kurzov\Scripts\BonusMove.cs" />
+    <Compile Include="Assets\Run_Kurzov\Scripts\CakeBase.cs" />
+    <Compile Include="Assets\Run_Kurzov\Scripts\CakeBig.cs" />
+    <Compile Include="Assets\Run_Kurzov\Scripts\CakeSmall.cs" />
+    <Compile Include="Assets\Run_Kurzov\Scripts\EnvironmentBase.cs" />
+    <Compile Include="Assets\Run_Kurzov\Scripts\EnvironmentBehaviour.cs" />
+    <Compile Include="Assets\Run_Kurzov\Scripts\PlayerBace.cs" />
+    <Compile Include="Assets\Scripts\BaseEnemy.cs" />
+    <Compile Include="Assets\Scripts\ChildEntity.cs" />
+    <Compile Include="Assets\Scripts\TestBaseClass.cs" />
+    <Compile Include="Assets\VacuumShaders\Curved World\Example Scenes\1. Classic Runner\Scripts\FPSCounter.cs" />
+    <Compile Include="Assets\VacuumShaders\Curved World\Example Scenes\1. Classic Runner\Scripts\Runner_Car.cs" />
+    <Compile Include="Assets\VacuumShaders\Curved World\Example Scenes\1. Classic Runner\Scripts\Runner_Chunk.cs" />
+    <Compile Include="Assets\VacuumShaders\Curved World\Example Scenes\1. Classic Runner\Scripts\Runner_Player.cs" />
+    <Compile Include="Assets\VacuumShaders\Curved World\Example Scenes\1. Classic Runner\Scripts\Runner_SceneManager.cs" />
+    <Compile Include="Assets\VacuumShaders\Curved World\Example Scenes\2. Little Planet (Nightmare)\MobileInput\Scripts\CrossPlatformInputManager.cs" />
+    <Compile Include="Assets\VacuumShaders\Curved World\Example Scenes\2. Little Planet (Nightmare)\MobileInput\Scripts\Joystick.cs" />
+    <Compile Include="Assets\VacuumShaders\Curved World\Example Scenes\2. Little Planet (Nightmare)\MobileInput\Scripts\MobileControlRig.cs" />
+    <Compile Include="Assets\VacuumShaders\Curved World\Example Scenes\2. Little Planet (Nightmare)\MobileInput\Scripts\PlatformSpecific\MobileInput.cs" />
+    <Compile Include="Assets\VacuumShaders\Curved World\Example Scenes\2. Little Planet (Nightmare)\MobileInput\Scripts\PlatformSpecific\StandaloneInput.cs" />
+    <Compile Include="Assets\VacuumShaders\Curved World\Example Scenes\2. Little Planet (Nightmare)\MobileInput\Scripts\VirtualInput.cs" />
+    <Compile Include="Assets\VacuumShaders\Curved World\Example Scenes\2. Little Planet (Nightmare)\Scripts\Enemy\EnemyAttack.cs" />
+    <Compile Include="Assets\VacuumShaders\Curved World\Example Scenes\2. Little Planet (Nightmare)\Scripts\Enemy\EnemyHealth.cs" />
+    <Compile Include="Assets\VacuumShaders\Curved World\Example Scenes\2. Little Planet (Nightmare)\Scripts\Enemy\EnemyMovement.cs" />
+    <Compile Include="Assets\VacuumShaders\Curved World\Example Scenes\2. Little Planet (Nightmare)\Scripts\Managers\EnemyManager.cs" />
+    <Compile Include="Assets\VacuumShaders\Curved World\Example Scenes\2. Little Planet (Nightmare)\Scripts\Managers\GameOverManager.cs" />
+    <Compile Include="Assets\VacuumShaders\Curved World\Example Scenes\2. Little Planet (Nightmare)\Scripts\Managers\ScoreManager.cs" />
+    <Compile Include="Assets\VacuumShaders\Curved World\Example Scenes\2. Little Planet (Nightmare)\Scripts\Player\PlayerHealth.cs" />
+    <Compile Include="Assets\VacuumShaders\Curved World\Example Scenes\2. Little Planet (Nightmare)\Scripts\Player\PlayerMovement.cs" />
+    <Compile Include="Assets\VacuumShaders\Curved World\Example Scenes\2. Little Planet (Nightmare)\Scripts\Player\PlayerShooting.cs" />
+    <Compile Include="Assets\VacuumShaders\Curved World\Example Scenes\2. Little Planet (Nightmare)\Scripts\Scripts\Audio\MixLevels.cs" />
+    <Compile Include="Assets\VacuumShaders\Curved World\Example Scenes\2. Little Planet (Nightmare)\Scripts\Scripts\Camera\CameraFollow.cs" />
+    <Compile Include="Assets\VacuumShaders\Curved World\Example Scenes\2. Little Planet (Nightmare)\Scripts\Scripts\Enemy\EnemyAttack.cs" />
+    <Compile Include="Assets\VacuumShaders\Curved World\Example Scenes\2. Little Planet (Nightmare)\Scripts\Scripts\Enemy\EnemyHealth.cs" />
+    <Compile Include="Assets\VacuumShaders\Curved World\Example Scenes\2. Little Planet (Nightmare)\Scripts\Scripts\Enemy\EnemyMovement.cs" />
+    <Compile Include="Assets\VacuumShaders\Curved World\Example Scenes\2. Little Planet (Nightmare)\Scripts\Scripts\Managers\EnemyManager.cs" />
+    <Compile Include="Assets\VacuumShaders\Curved World\Example Scenes\2. Little Planet (Nightmare)\Scripts\Scripts\Managers\GameOverManager.cs" />
+    <Compile Include="Assets\VacuumShaders\Curved World\Example Scenes\2. Little Planet (Nightmare)\Scripts\Scripts\Managers\PauseManager.cs" />
+    <Compile Include="Assets\VacuumShaders\Curved World\Example Scenes\2. Little Planet (Nightmare)\Scripts\Scripts\Managers\ScoreManager.cs" />
+    <Compile Include="Assets\VacuumShaders\Curved World\Example Scenes\2. Little Planet (Nightmare)\Scripts\Scripts\Player\PlayerHealth.cs" />
+    <Compile Include="Assets\VacuumShaders\Curved World\Example Scenes\2. Little Planet (Nightmare)\Scripts\Scripts\Player\PlayerMovement.cs" />
+    <Compile Include="Assets\VacuumShaders\Curved World\Example Scenes\2. Little Planet (Nightmare)\Scripts\Scripts\Player\PlayerShooting.cs" />
+    <Compile Include="Assets\VacuumShaders\Curved World\Example Scenes\3. Little Planet (Follow script)\Scripts\CameraPan.cs" />
+    <Compile Include="Assets\VacuumShaders\Curved World\Example Scenes\3. Little Planet (Follow script)\Scripts\Follow.cs" />
+    <Compile Include="Assets\VacuumShaders\Curved World\Example Scenes\4. Cylindrical Tower\Scripts\CylindricalTower_Car.cs" />
+    <Compile Include="Assets\VacuumShaders\Curved World\Example Scenes\4. Cylindrical Tower\Scripts\CylindricalTower_Chunk.cs" />
+    <Compile Include="Assets\VacuumShaders\Curved World\Example Scenes\4. Cylindrical Tower\Scripts\CylindricalTower_Player.cs" />
+    <Compile Include="Assets\VacuumShaders\Curved World\Example Scenes\4. Cylindrical Tower\Scripts\CylindricalTower_SceneManager.cs" />
+    <Compile Include="Assets\VacuumShaders\Curved World\Example Scenes\5. Perspective 2D\Scripts\Perspective2D_PlatformerCharacter.cs" />
+    <Compile Include="Assets\VacuumShaders\Curved World\Example Scenes\5. Perspective 2D\Scripts\Perspective2D_PlatformerUserControl.cs" />
+    <Compile Include="Assets\VacuumShaders\Curved World\Example Scenes\5. Perspective 2D\Scripts\Perspective2D_Restarter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\VacuumShaders\Curved World\Example Scenes\2. Little Planet (Nightmare)\Fonts\LuckiestGuy\LICENSE.txt" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\Example\Example_Surface.shader" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\Example\Example_Unlit.shader" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\One Directional Light\ODL_Add.shader" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\One Directional Light\ODL_Add_2Pass.shader" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\One Directional Light\ODL_Add_2Pass_Blend_Decal.shader" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\One Directional Light\ODL_Add_2Pass_Blend_Detail.shader" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\One Directional Light\ODL_Add_2Pass_Blend_Vertex_Alpha.shader" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\One Directional Light\ODL_Add_Blend_Decal.shader" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\One Directional Light\ODL_Add_Blend_Detail.shader" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\One Directional Light\ODL_Add_Blend_Vertex_Alpha.shader" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\One Directional Light\ODL_Blend_Decal.shader" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\One Directional Light\ODL_Blend_Detail.shader" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\One Directional Light\ODL_Blend_Vertex_Alpha.shader" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\One Directional Light\ODL_Cutout_Blend_Decal.shader" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\One Directional Light\ODL_Cutout_Blend_Detail.shader" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\One Directional Light\ODL_Cutout_Blend_Vertex_Alpha.shader" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\One Directional Light\ODL_Cutout_Diffuse.shader" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\One Directional Light\ODL_Diffuse.shader" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\One Directional Light\ODL_Transparent.shader" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\One Directional Light\ODL_Transparent_2Pass.shader" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\One Directional Light\ODL_Transparent_2Pass_Blend_Decal.shader" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\One Directional Light\ODL_Transparent_2Pass_Blend_Detail.shader" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\One Directional Light\ODL_Transparent_2Pass_Blend_Vertex_Alpha.shader" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\One Directional Light\ODL_Transparent_Blend_Decal.shader" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\One Directional Light\ODL_Transparent_Blend_Detail.shader" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\One Directional Light\ODL_Transparent_Blend_Vertex_Alpha.shader" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\Particles\Particle Add.shader" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\Particles\Particle AddMultiply.shader" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\Particles\Particle AddSmooth.shader" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\Particles\Particle Alpha Blend.shader" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\Particles\Particle Blend.shader" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\Particles\Particle Multiply.shader" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\Particles\Particle MultiplyDouble.shader" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\Particles\Particle Premultiply Blend.shader" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\Resources\Camera-DepthNormalTexture.shader" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\Resources\ColorMask0.shader" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\Resources\Outline.shader" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\Resources\ShadowCaster_Cutout.shader" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\Resources\ShadowCaster_Opaque.shader" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\Skybox\Background_2D.shader" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\Sprite\Default.shader" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\Sprite\Default_2_Sided.shader" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\Sprite\Diffuse.shader" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\Standard\Standard.shader" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\Standard\StandardSpecular.shader" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\Unlit\Unlit.shader" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\Unlit\Unlit_Add.shader" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\Unlit\Unlit_Add_2Pass.shader" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\Unlit\Unlit_Add_2Pass_Blend_Decal.shader" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\Unlit\Unlit_Add_2Pass_Blend_Detail.shader" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\Unlit\Unlit_Add_2Pass_Blend_Vertex_Alpha.shader" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\Unlit\Unlit_Add_Blend_Decal.shader" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\Unlit\Unlit_Add_Blend_Detail.shader" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\Unlit\Unlit_Add_Blend_Vertex_Alpha.shader" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\Unlit\Unlit_Blend_Decal.shader" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\Unlit\Unlit_Blend_Detail.shader" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\Unlit\Unlit_Blend_Vertex_Alpha.shader" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\Unlit\Unlit_Cutout.shader" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\Unlit\Unlit_Cutout_Blend_Decal.shader" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\Unlit\Unlit_Cutout_Blend_Detail.shader" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\Unlit\Unlit_Cutout_Blend_Vertex_Alpha.shader" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\Unlit\Unlit_Transparent.shader" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\Unlit\Unlit_Transparent_2Pass.shader" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\Unlit\Unlit_Transparent_2Pass_Blend_Decal.shader" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\Unlit\Unlit_Transparent_2Pass_Blend_Detail.shader" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\Unlit\Unlit_Transparent_2Pass_Blend_Vertex_Alpha.shader" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\Unlit\Unlit_Transparent_Blend_Decal.shader" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\Unlit\Unlit_Transparent_Blend_Detail.shader" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\Unlit\Unlit_Transparent_Blend_Vertex_Alpha.shader" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\VertexLit\VertexLit.shader" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\VertexLit\VertexLit_Cutout.shader" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\VertexLit\VertexLit_Transparent.shader" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\cginc\CurvedWorld_Base.cginc" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\cginc\CurvedWorld_ColorMask0.cginc" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\cginc\CurvedWorld_ForwardBase.cginc" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\cginc\CurvedWorld_Functions.cginc" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\cginc\CurvedWorld_Outline.cginc" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\cginc\CurvedWorld_Projector.cginc" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\cginc\CurvedWorld_SpeedTreeBillboardCommon.cginc" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\cginc\CurvedWorld_SpeedTreeCommon.cginc" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\cginc\CurvedWorld_Surface.cginc" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\cginc\CurvedWorld_TerrainSplatmapCommon.cginc" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\cginc\CurvedWorld_UnityBuiltin2xTreeLibrary.cginc" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\cginc\CurvedWorld_UnityBuiltin3xTreeLibrary.cginc" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\cginc\CurvedWorld_UnityStandardCore.cginc" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\cginc\CurvedWorld_UnityStandardCoreForward.cginc" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\cginc\CurvedWorld_UnityStandardCoreForwardSimple.cginc" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\cginc\CurvedWorld_UnityStandardInput.cginc" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\cginc\CurvedWorld_UnityStandardMeta.cginc" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\cginc\CurvedWorld_UnityStandardShadow.cginc" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\cginc\CurvedWorld_Unlit.cginc" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\cginc\CurvedWorld_VertexLit.cginc" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\cginc\CurvedWorld_Water.cginc" />
+    <None Include="Assets\VacuumShaders\Curved World\Shaders\cginc\Empty.shader" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="GenerateTargetFrameworkMonikerAttribute" />
+</Project>
