@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class TestBaseClass : MonoBehaviour {
+public class GameController : MonoBehaviour {
 	public static Action ScoreChange;
 	public static Action<GameObject> DeadMinion;
 	public List<GameObject> enemies; //Если будем хранить врагов, то пригодится
 
-	public static TestBaseClass instance;
+	public static GameController instance;
 
 
 	private int m_Score;

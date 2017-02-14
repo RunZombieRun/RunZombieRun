@@ -84,16 +84,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Run_Kurzov\Scripts\BonusMove.cs" />
-    <Compile Include="Assets\Run_Kurzov\Scripts\CakeBase.cs" />
-    <Compile Include="Assets\Run_Kurzov\Scripts\CakeBig.cs" />
-    <Compile Include="Assets\Run_Kurzov\Scripts\CakeSmall.cs" />
-    <Compile Include="Assets\Run_Kurzov\Scripts\EnvironmentBase.cs" />
-    <Compile Include="Assets\Run_Kurzov\Scripts\EnvironmentBehaviour.cs" />
-    <Compile Include="Assets\Run_Kurzov\Scripts\PlayerBace.cs" />
-    <Compile Include="Assets\Scripts\BaseEnemy.cs" />
-    <Compile Include="Assets\Scripts\ChildEntity.cs" />
-    <Compile Include="Assets\Scripts\TestBaseClass.cs" />
+    <Compile Include="Assets\Scripts\Enemies\BaseEnemy.cs" />
+    <Compile Include="Assets\Scripts\Enemies\ChildEntity.cs" />
+    <Compile Include="Assets\Scripts\Entertainment\BonusMove.cs" />
+    <Compile Include="Assets\Scripts\Entertainment\CakeBase.cs" />
+    <Compile Include="Assets\Scripts\Entertainment\CakeBig.cs" />
+    <Compile Include="Assets\Scripts\Entertainment\CakeSmall.cs" />
+    <Compile Include="Assets\Scripts\Entertainment\EnvironmentBase.cs" />
+    <Compile Include="Assets\Scripts\Entertainment\EnvironmentBehaviour.cs" />
+    <Compile Include="Assets\Scripts\Entertainment\PlayerBace.cs" />
+    <Compile Include="Assets\Scripts\GameController.cs" />
     <Compile Include="Assets\VacuumShaders\Curved World\Example Scenes\1. Classic Runner\Scripts\FPSCounter.cs" />
     <Compile Include="Assets\VacuumShaders\Curved World\Example Scenes\1. Classic Runner\Scripts\Runner_Car.cs" />
     <Compile Include="Assets\VacuumShaders\Curved World\Example Scenes\1. Classic Runner\Scripts\Runner_Chunk.cs" />

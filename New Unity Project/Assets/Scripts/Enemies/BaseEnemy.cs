@@ -13,12 +13,8 @@ public abstract class BaseEnemy : MonoBehaviour
 
     public void Start()
     {
-        TestBaseClass.instance.enemies.Add(this.gameObject);
+        GameController.instance.enemies.Add(this.gameObject);
     }
-
-
-
-
 
 	public virtual void Die ()
 	{

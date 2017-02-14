@@ -15,7 +15,7 @@ public class ChildEntity : BaseEnemy
 
 	public override void Die ()
 	{
-		//TestBaseClass.DeadMinion.Invoke (this.gameObject); // Делаем инвок того что моб уме (( звук, минус колчиество общее, место в гонке)
+		
 		base.Die ();
 	}
 
