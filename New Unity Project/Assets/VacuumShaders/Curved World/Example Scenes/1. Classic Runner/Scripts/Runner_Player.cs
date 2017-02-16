@@ -3,6 +3,7 @@
 
 using UnityEngine;
 using System.Collections;
+using System;
 
 
 namespace VacuumShaders
@@ -12,6 +13,9 @@ namespace VacuumShaders
         [AddComponentMenu("VacuumShaders/Curved World/Example/Runner/Player")]
         public class Runner_Player : MonoBehaviour
         {
+
+            public static Action DamageToPlayer;
+
             public enum SIDE { Left, Right }
             //////////////////////////////////////////////////////////////////////////////
             //                                                                          // 
@@ -19,8 +23,21 @@ namespace VacuumShaders
             //                                                                          //               
             //////////////////////////////////////////////////////////////////////////////
             static public Runner_Player get;
+            [SerializeField]
+            private int m_life;
+            public int Life
+            {
+                get
+                {
+                    return m_life;
+                }
+                set
+                {
+                    m_life = value;
+                    DamageToPlayer.Invoke();
+                }
+            }
 
-            public int Life;
             public int Armor;
 
             public int Stamina;
@@ -54,6 +71,21 @@ namespace VacuumShaders
 
 
                 Physics.gravity = new Vector3(0, -50, 0);
+            }
+
+            void CheckDamage()
+            {
+                if (Life <= 0)
+                {
+                    Debug.Log("I am Dead");
+                    Destroy(this.gameObject);
+                }
+            }
+
+
+            private void OnEnable()
+            {
+                DamageToPlayer += CheckDamage;
             }
 
             void OnDisable()
@@ -91,7 +123,7 @@ namespace VacuumShaders
 
             void OnCollisionEnter(Collision collision)
             {
-                Vector3 force = (Vector3.forward + Vector3.up + Random.insideUnitSphere).normalized * Random.Range(100, 150);
+                Vector3 force = (Vector3.forward + Vector3.up + UnityEngine.Random.insideUnitSphere).normalized * UnityEngine.Random.Range(100, 150);
                 collision.rigidbody.AddForce(force, ForceMode.Impulse);
 
                 Runner_Car car = collision.gameObject.GetComponent<Runner_Car>();

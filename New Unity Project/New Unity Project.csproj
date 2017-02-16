@@ -85,7 +85,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Enemies\BaseEnemy.cs" />
-    <Compile Include="Assets\Scripts\Enemies\ChildEntity.cs" />
+    <Compile Include="Assets\Scripts\Enemies\FirstEnemy.cs" />
     <Compile Include="Assets\Scripts\Entertainment\BonusMove.cs" />
     <Compile Include="Assets\Scripts\Entertainment\CakeBase.cs" />
     <Compile Include="Assets\Scripts\Entertainment\CakeBig.cs" />
@@ -94,6 +94,7 @@
     <Compile Include="Assets\Scripts\Entertainment\EnvironmentBehaviour.cs" />
     <Compile Include="Assets\Scripts\Entertainment\PlayerBace.cs" />
     <Compile Include="Assets\Scripts\GameController.cs" />
+    <Compile Include="Assets\Scripts\Static.cs" />
     <Compile Include="Assets\VacuumShaders\Curved World\Example Scenes\1. Classic Runner\Scripts\FPSCounter.cs" />
     <Compile Include="Assets\VacuumShaders\Curved World\Example Scenes\1. Classic Runner\Scripts\Runner_Car.cs" />
     <Compile Include="Assets\VacuumShaders\Curved World\Example Scenes\1. Classic Runner\Scripts\Runner_Chunk.cs" />
