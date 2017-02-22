@@ -9,14 +9,29 @@ public class GameController : MonoBehaviour {
 	public List<GameObject> enemies; //Если будем хранить врагов, то пригодится
 
 	public static GameController instance;
+    [SerializeField]
+    private int m_Health;
+    public int Health
+    {
+        set
+        {
+            m_Health = value;
+        }
+        get
+        {
+            return m_Health;
+        }
+    }
 
 
-	private int m_Score;
+    private int m_Score;
 	public  int Score
 	{
 		set{
-			m_Score = value;			
-		}
+			m_Score = value;
+            CheckHP();
+
+        }
 		get{
 			return m_Score;
 		}
@@ -48,6 +63,13 @@ public class GameController : MonoBehaviour {
 		DeadMinion -= DeadSound;
 	}
 
+    private void CheckHP()
+    {
+        if(m_Health <= 0)
+        {
+            Destroy(Player_Controller.get.gameObject);
+        }
+    }
 	private void DoSomethingWithScore(){
 		
 		Debug.Log ("ScoreChanges");

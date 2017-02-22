@@ -56,11 +56,7 @@ public class Player_Controller : MonoBehaviour {
     
     [TooltipAttribute("Скорость слайда")]
     public float slideSpeed = 3f;
-    
-
-
-    
-
+     
 
     void Awake()
     {
@@ -180,9 +176,8 @@ public class Player_Controller : MonoBehaviour {
 
         //запускаем анимацию, если взможно
         if(jumpAnimation != null){
-				animationComp.Play(jumpAnimation.name);
+			GetComponentInChildren<Animator>().SetTrigger("Jump");
 		}
-
         //запускаем цикл пока состяние прыжка активно
         while (state == PLAYERSTATE.Jump)
         {

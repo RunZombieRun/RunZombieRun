@@ -25,6 +25,8 @@ namespace VacuumShaders
 
             public GameObject[] Zombies;
 
+            public GameObject[] Enviroment;
+
             static public float chunkSize = 60;
             static public Vector3 moveVector = new Vector3(0, 0, -1);
             static public GameObject lastChunk;
@@ -51,7 +53,7 @@ namespace VacuumShaders
                 }
 
                 //Instantiate cars
-                StartCoroutine(ZombieSpawner());
+                
             } 
 
             // Use this for initialization
@@ -66,18 +68,26 @@ namespace VacuumShaders
                 }
 
                 listMaterials = listMaterials.Distinct().ToList();
+
+                StartCoroutine(ZombieSpawner());
+                StartCoroutine(EnviromentSpawner());
             }
             IEnumerator ZombieSpawner()
             {
-                int randSpawnDot = 0;
+                
                 for (;;)
                 {
-                   yield return new WaitForSeconds(2f);
+                    int randSpawnDot = Random.Range(0, 3);
+                    yield return new WaitForSeconds(2f);
+
+                    GameObject zmb =  Instantiate(Zombies[0]) as GameObject;
                    
-                  var zmb =  Instantiate(Zombies[0]) as GameObject;
+
+
                     if (randSpawnDot == 0)
                     {
-                        zmb.transform.position = new Vector3(-3.5f, 1, Random.Range(140, 240));
+                        zmb.transform.position = new Vector3(-4f, 1, Random.Range(140, 240));
+
                     }
                     else if(randSpawnDot == 1)
                     {
@@ -85,7 +95,30 @@ namespace VacuumShaders
                     }
                     else
                     {
-                        zmb.transform.position = new Vector3(3.5f, 1, Random.Range(140, 240));
+                        zmb.transform.position = new Vector3(4f, 1, Random.Range(140, 240));
+                        randSpawnDot = 0;                    
+                    }
+                    randSpawnDot++;
+                }
+            }
+            IEnumerator EnviromentSpawner()
+            {
+
+                for (;;)
+                {
+                    int randSpawnDot = Random.Range(0, 3);
+                    yield return new WaitForSeconds(3f);
+
+                    GameObject zmb = Instantiate(Enviroment[0]) as GameObject;
+
+                    if (randSpawnDot == 0)
+                    {
+                        zmb.transform.position = new Vector3(-5.5f, 0, Random.Range(140, 240));
+
+                    }
+                    else if (randSpawnDot == 1)
+                    {
+                        zmb.transform.position = new Vector3(5.5f, 0, Random.Range(140, 240));
                         randSpawnDot = 0;
                     }
                     randSpawnDot++;

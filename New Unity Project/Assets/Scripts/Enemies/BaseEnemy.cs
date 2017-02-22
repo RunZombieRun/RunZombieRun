@@ -26,12 +26,9 @@ public abstract class BaseEnemy : MonoBehaviour
 		m_Speed += val;
 	}
 
-	public virtual void GetDamage(int damage)
+	public virtual void DealDmg(int damage)
 	{
-		//Не уверен что нам понадобится этот метод, но пусть будет
-		int dmg = m_Shield - damage;
-		if (dmg < 0)
-			m_Health += dmg;
+        GameController.instance.Health -= damage;
 	}
 
 }

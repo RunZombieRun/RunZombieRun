@@ -20,12 +20,10 @@ namespace VacuumShaders
 
             void Start()
             {
-                rigidBody = GetComponent<Rigidbody>();
-                              
+                rigidBody = GetComponent<Rigidbody>();                              
             }
             private void OnCollisionEnter(Collision collision)
             {
-                print("qwe");
                 if (collision.gameObject.tag == "Player")
                 {
                     Destroy(collision.gameObject);
@@ -36,12 +34,11 @@ namespace VacuumShaders
             {
                 rigidBody.MovePosition(transform.position + Runner_SceneManager.moveVector * Runner_SceneManager.get.speed * Time.deltaTime * speed);
 
-
                 if (transform.position.y < -10)
                 {
                     Destroy(this.gameObject);
                 }
-           }
+            }
         }
     }
 }
