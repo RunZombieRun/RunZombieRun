@@ -104,7 +104,7 @@ namespace VacuumShaders
                         newPos = new Vector3(-3.5f, 0, 0);
                         side = SIDE.Left;
 
-                        animationComp.Play(moveLeft.name);
+                    //    animationComp.Play(moveLeft.name);
                     }
                 }
                 else if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
@@ -114,7 +114,7 @@ namespace VacuumShaders
                         newPos = new Vector3(3.5f, 0, 0);
                         side = SIDE.Right;
 
-                        animationComp.Play(moveRight.name);
+                   //     animationComp.Play(moveRight.name);
                     }
                 }
 

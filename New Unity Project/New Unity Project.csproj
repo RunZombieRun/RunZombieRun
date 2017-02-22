@@ -85,6 +85,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Enemies\BaseEnemy.cs" />
+    <Compile Include="Assets\Scripts\Enemies\EnemyFermer.cs" />
     <Compile Include="Assets\Scripts\Enemies\FirstEnemy.cs" />
     <Compile Include="Assets\Scripts\Entertainment\BonusMove.cs" />
     <Compile Include="Assets\Scripts\Entertainment\CakeBase.cs" />
@@ -136,6 +137,7 @@
     <Compile Include="Assets\VacuumShaders\Curved World\Example Scenes\5. Perspective 2D\Scripts\Perspective2D_PlatformerCharacter.cs" />
     <Compile Include="Assets\VacuumShaders\Curved World\Example Scenes\5. Perspective 2D\Scripts\Perspective2D_PlatformerUserControl.cs" />
     <Compile Include="Assets\VacuumShaders\Curved World\Example Scenes\5. Perspective 2D\Scripts\Perspective2D_Restarter.cs" />
+    <Compile Include="Assets\_Script\Player_Controller.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\VacuumShaders\Curved World\Example Scenes\2. Little Planet (Nightmare)\Fonts\LuckiestGuy\LICENSE.txt" />

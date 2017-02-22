@@ -4,7 +4,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
-
+using System.Collections;
 
 namespace VacuumShaders
 {
@@ -23,7 +23,7 @@ namespace VacuumShaders
             public float speed = 1;
             public GameObject[] chunks;
 
-            public GameObject[] cars;
+            public GameObject[] Zombies;
 
             static public float chunkSize = 60;
             static public Vector3 moveVector = new Vector3(0, 0, -1);
@@ -51,10 +51,7 @@ namespace VacuumShaders
                 }
 
                 //Instantiate cars
-                for (int i = 0; i < cars.Length; i++)
-                {
-                    Instantiate(cars[i]);
-                }
+                StartCoroutine(ZombieSpawner());
             } 
 
             // Use this for initialization
@@ -69,6 +66,30 @@ namespace VacuumShaders
                 }
 
                 listMaterials = listMaterials.Distinct().ToList();
+            }
+            IEnumerator ZombieSpawner()
+            {
+                int randSpawnDot = 0;
+                for (;;)
+                {
+                   yield return new WaitForSeconds(2f);
+                   
+                  var zmb =  Instantiate(Zombies[0]) as GameObject;
+                    if (randSpawnDot == 0)
+                    {
+                        zmb.transform.position = new Vector3(-3.5f, 1, Random.Range(140, 240));
+                    }
+                    else if(randSpawnDot == 1)
+                    {
+                        zmb.transform.position = new Vector3(0f, 1, Random.Range(140, 240));
+                    }
+                    else
+                    {
+                        zmb.transform.position = new Vector3(3.5f, 1, Random.Range(140, 240));
+                        randSpawnDot = 0;
+                    }
+                    randSpawnDot++;
+                }
             }
 
             //////////////////////////////////////////////////////////////////////////////
@@ -91,7 +112,7 @@ namespace VacuumShaders
             {
                 GameObject.Destroy(car.gameObject);
 
-                Instantiate(cars[Random.Range(0, cars.Length)]);
+                Instantiate(Zombies[Random.Range(0, Zombies.Length)]);
             }
         }
     }
