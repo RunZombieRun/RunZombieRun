@@ -80,22 +80,22 @@ namespace VacuumShaders
                     int randSpawnDot = Random.Range(0, 3);
                     yield return new WaitForSeconds(2f);
 
-                    GameObject zmb =  Instantiate(Zombies[0]) as GameObject;
+                    GameObject zmb =  Instantiate(Zombies[1]) as GameObject;
                    
 
 
                     if (randSpawnDot == 0)
                     {
-                        zmb.transform.position = new Vector3(-4f, 1, Random.Range(140, 240));
+                        zmb.transform.position = new Vector3(-4f, -2, Random.Range(140, 240));
 
                     }
                     else if(randSpawnDot == 1)
                     {
-                        zmb.transform.position = new Vector3(0f, 1, Random.Range(140, 240));
+                        zmb.transform.position = new Vector3(0f, -2, Random.Range(140, 240));
                     }
                     else
                     {
-                        zmb.transform.position = new Vector3(4f, 1, Random.Range(140, 240));
+                        zmb.transform.position = new Vector3(4f, -2, Random.Range(140, 240));
                         randSpawnDot = 0;                    
                     }
                     randSpawnDot++;
@@ -106,19 +106,19 @@ namespace VacuumShaders
 
                 for (;;)
                 {
-                    int randSpawnDot = Random.Range(0, 3);
+                    int randSpawnDot = Random.Range(0, 2);
                     yield return new WaitForSeconds(3f);
 
                     GameObject zmb = Instantiate(Enviroment[0]) as GameObject;
 
                     if (randSpawnDot == 0)
                     {
-                        zmb.transform.position = new Vector3(-5.5f, 0, Random.Range(140, 240));
+                        zmb.transform.position = new Vector3(-6.6f, 0, Random.Range(140, 240));
 
                     }
                     else if (randSpawnDot == 1)
                     {
-                        zmb.transform.position = new Vector3(5.5f, 0, Random.Range(140, 240));
+                        zmb.transform.position = new Vector3(6.6f, 0, Random.Range(140, 240));
                         randSpawnDot = 0;
                     }
                     randSpawnDot++;

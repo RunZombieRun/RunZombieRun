@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player_Controller : MonoBehaviour {
     static public Player_Controller get;
 
-	public enum PLAYERSTATE { Left, Right, Center, Jump, Slide }
+	public enum PLAYERSTATE { Left, Right, Center, Slide, Jump}
     PLAYERSTATE state;
     PLAYERSTATE previusState;
 
@@ -47,16 +47,16 @@ public class Player_Controller : MonoBehaviour {
     
     [TooltipAttribute("Длительность прыжка")]
     public float jumpTime = 1f;
-    
-    [TooltipAttribute("Длительность слайда")]
-    public float slideTime = 3f;
-    
-    [TooltipAttribute("Дальность слайда")]
-    public float slideDistance = -5f;
-    
-    [TooltipAttribute("Скорость слайда")]
-    public float slideSpeed = 3f;
-     
+ 
+    [Header("Минимальная дистанция для свайпа")]
+	public float minSwipeDistY = 0.5f;
+	public float minSwipeDistX = 0.5f;	
+	//начальная позиция для свайпа
+    private Vector2 startPos;
+    //возможные типы свайпа
+	enum SWIPETYPE {non, swipeUP, swipeDOWN, swipeLEFT, swipeRIGHT}
+    //возможные сохраняем в статическую переменную с типом свайпа
+	SWIPETYPE swipeType;
 
     void Awake()
     {
@@ -89,43 +89,69 @@ public class Player_Controller : MonoBehaviour {
     void Update()
     {
         CharacterController();
+#if UNITY_ANDROID
+        SwipeDetection(); //запускаем детектор в апдейте, если билд под андрои
+     #endif
     }
 
+
+    public void Left()
+    {
+        //из правого края в центр
+        if (state == PLAYERSTATE.Right)
+        {
+            newPos = centerLinePosition;
+            state = PLAYERSTATE.Center;
+            //из центра в левый край
+        }
+        else if (state == PLAYERSTATE.Center)
+        {
+            newPos = leftLinePosition;
+            state = PLAYERSTATE.Left;
+        }
+        //проигрываем анимацию
+        if (moveLeftAnimation != null)
+        {
+            animationComp.Play(moveLeftAnimation.name);
+        }
+    }
+  public  void Right()
+    {
+        //из левого края в центр
+        if (state == PLAYERSTATE.Left)
+        {
+            newPos = centerLinePosition;
+            state = PLAYERSTATE.Center;
+            //из центра в правый край
+        }
+        else if (state == PLAYERSTATE.Center)
+        {
+            newPos = rightLinePosition;
+            state = PLAYERSTATE.Right;
+        }
+        //анимация
+        if (moveRightAnimation != null)
+        {
+            animationComp.Play(moveRightAnimation.name);
+        }
+    }
+    public void Up()
+    {
+        //если нажата клавиша, прыгаем
+        StartCoroutine(PlayerJump(jumpTime, jumpForce));
+        //выключаем гравитацию после карутины
+        playerRigibody.useGravity = false;
+    }
+    
     void CharacterController(){
         //перемещение влево при нажатии клавиши
-        if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A) || swipeType == SWIPETYPE.swipeLEFT)
         {
-            //из правого края в центр
-			if (state == PLAYERSTATE.Right)
-			{
-				newPos = centerLinePosition;
-				state = PLAYERSTATE.Center;
-            //из центра в левый край
-			} else if (state == PLAYERSTATE.Center) {
-				newPos = leftLinePosition;
-				state = PLAYERSTATE.Left;
-			}
-            //проигрываем анимацию
-			if(moveLeftAnimation != null){
-				animationComp.Play(moveLeftAnimation.name);
-			}
+            Left();
 		}
-		else if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
-        {	
-            //из левого края в центр
-			if (state == PLAYERSTATE.Left)
-			{
-				newPos = centerLinePosition;
-				state = PLAYERSTATE.Center;
-            //из центра в правый край
-			} else if (state == PLAYERSTATE.Center) {
-				newPos = rightLinePosition;
-				state = PLAYERSTATE.Right;
-			}
-            //анимация
-			if(moveRightAnimation != null){
-				animationComp.Play(moveRightAnimation.name);
-			}
+		else if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D) || swipeType == SWIPETYPE.swipeRIGHT)
+        {
+            Right();
 		}
 		//если изменилась позиция и мы не перемещаем персонажа в данный момент
         if(transform.position != newPos && !isChangingLane) {
@@ -136,19 +162,13 @@ public class Player_Controller : MonoBehaviour {
             //меняем маркер состояния перемещения
             isChangingLane = false;
         }
-        if((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.Space)) && state != PLAYERSTATE.Jump){
-            //если нажата клавиша, прыгаем
-            StartCoroutine(PlayerJump(jumpTime, jumpForce));
-            //выключаем гравитацию после карутины
-            playerRigibody.useGravity = false;
-            
-        }
-        if((Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.LeftShift)) && state != PLAYERSTATE.Slide){
-            playerCollider.isTrigger = true;
-            //если нажата клавиша, двигаемся вперед;
-            PlayerSlide(slideDistance, slideSpeed);
-            playerCollider.isTrigger = false;
+        if((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.Space) || swipeType == SWIPETYPE.swipeUP) && state != PLAYERSTATE.Jump){
 
+            Up();
+        }
+        if((Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.LeftShift) || swipeType == SWIPETYPE.swipeDOWN) && state != PLAYERSTATE.Slide){
+            //если нажата клавиша, двигаемся вперед;
+            PlayerSlide();
         }
         
     }
@@ -202,19 +222,99 @@ public class Player_Controller : MonoBehaviour {
     }
     //метод слайда, на вход идет время скрость, дальность слайда
     //переделать
-    void PlayerSlide(float slideDistance, float slideSpeed){
-
+    void PlayerSlide(){
         previusState = state;
         state = PLAYERSTATE.Slide;
-        previusPos = transform.position;
-        newPos = new Vector3(transform.position.x, transform.position.y, slideDistance);
         if(slideAnimation != null){
 				animationComp.Play(slideAnimation.name);
-		}
-        if (newPos != previusPos && state == PLAYERSTATE.Slide){
-            transform.position = Vector3.Lerp(transform.position, newPos, Time.deltaTime * slideSpeed);
-            state = previusState;
+                state = previusState;
+		} else {
+            Debug.LogError("Отсутствует анимация слайда!");
         }
-            
+    }
+
+    void SwipeDetection(){
+    
+        if (Input.touchCount > 0){
+			Touch touch = Input.touches[0];
+        
+			switch (touch.phase) 	
+			{	
+			case TouchPhase.Began:
+				startPos = touch.position;
+                Debug.LogError("Свайп еще не определился!");
+				break;
+                
+                
+			case TouchPhase.Ended:
+                int swipeNumber = 0;
+				float swipeDistVertical = (new Vector3(0, touch.position.y, 0) - new Vector3(0, startPos.y, 0)).magnitude;
+                if (swipeDistVertical > minSwipeDistY) 	
+				{
+                	float swipeValue = Mathf.Sign(touch.position.y - startPos.y);
+                    if (swipeValue > 0)//верхний свайg
+                    {
+                        swipeNumber = 1;
+                        SwipeTypeDetection(swipeType, swipeNumber);
+                        //return swipeType = SWIPETYPE.swipeUP;
+                    }	
+					else if (swipeValue < 0)//нижний свайп
+                    {
+                        swipeNumber = 2;
+                        SwipeTypeDetection(swipeType, swipeNumber);
+                        //return swipeType = SWIPETYPE.swipeDOWN;
+                    }
+                    else 
+                    {
+                        Debug.LogError("Что то пошло не оперделение свайпа Вверх / Вниз!");
+                    }   
+				}
+				float swipeDistHorizontal = (new Vector3(touch.position.x,0, 0) - new Vector3(startPos.x, 0, 0)).magnitude;
+                if (swipeDistHorizontal > minSwipeDistX) 
+                {
+                    float swipeValue = Mathf.Sign(touch.position.x - startPos.x);
+                    if (swipeValue > 0)//правый свайп
+                    {
+                        swipeNumber = 3;
+                        SwipeTypeDetection(swipeType, swipeNumber);
+                        //return swipeType = SWIPETYPE.swipeRIGHT;
+                    }
+                    
+                    else if (swipeValue < 0)//левый свайп
+                    {
+                        swipeNumber = 4;
+                        SwipeTypeDetection(swipeType, swipeNumber);
+                        //return swipeType = SWIPETYPE.swipeLEFT;
+                    } 
+                    else 
+                    {
+                        Debug.LogError("Что то пошло не оперделение свайпа Лево / Право!");
+                    }
+               }
+               break;
+			}
+		} else {
+             Debug.LogError("Что то пошло не так в конце!");
+        }
+    }
+
+    SWIPETYPE SwipeTypeDetection(SWIPETYPE swipeType, int swipeNumber){
+        switch (swipeNumber)
+        {
+            case 1:
+                return swipeType = SWIPETYPE.swipeUP;
+                break;
+            case 2:
+                return swipeType = SWIPETYPE.swipeDOWN;
+                break;
+            case 3:
+                return swipeType = SWIPETYPE.swipeRIGHT;
+                break;
+            case 4:
+                return swipeType = SWIPETYPE.swipeLEFT;
+                break;
+            default:
+                return swipeType = SWIPETYPE.non;
+        }
     }
 }

@@ -14,7 +14,6 @@ namespace VacuumShaders
 
 
             Rigidbody rigidBody;
-            public float speed = 1;
             bool zombie = false;
 
 
@@ -32,7 +31,7 @@ namespace VacuumShaders
 
             private void FixedUpdate()
             {
-                rigidBody.MovePosition(transform.position + Runner_SceneManager.moveVector * Runner_SceneManager.get.speed * Time.deltaTime * speed);
+                rigidBody.MovePosition(transform.position + Runner_SceneManager.moveVector * Runner_SceneManager.get.speed * Time.deltaTime * m_Speed);
 
                 if (transform.position.y < -10)
                 {

@@ -79,4 +79,9 @@ public class GameController : MonoBehaviour {
 		enemies.Remove (obj);
 		Debug.Log ("Minion is Dead");
 	}
+
+    public void Restart()
+    {
+        Application.LoadLevel(0);
+    }
 }
