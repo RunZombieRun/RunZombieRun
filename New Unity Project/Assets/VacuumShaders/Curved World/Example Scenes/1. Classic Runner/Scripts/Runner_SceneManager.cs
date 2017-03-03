@@ -80,22 +80,22 @@ namespace VacuumShaders
                     int randSpawnDot = Random.Range(0, 3);
                     yield return new WaitForSeconds(2f);
 
-                    GameObject zmb =  Instantiate(Zombies[1]) as GameObject;
+                    GameObject zmb =  Instantiate(Zombies[0]) as GameObject;
                    
 
 
                     if (randSpawnDot == 0)
                     {
-                        zmb.transform.position = new Vector3(-4f, -2, Random.Range(140, 240));
+                        zmb.transform.position = new Vector3(-3f,0, Random.Range(140, 240));
 
                     }
                     else if(randSpawnDot == 1)
                     {
-                        zmb.transform.position = new Vector3(0f, -2, Random.Range(140, 240));
+                        zmb.transform.position = new Vector3(0f,0, Random.Range(140, 240));
                     }
                     else
                     {
-                        zmb.transform.position = new Vector3(4f, -2, Random.Range(140, 240));
+                        zmb.transform.position = new Vector3(3f, 0, Random.Range(140, 240));
                         randSpawnDot = 0;                    
                     }
                     randSpawnDot++;

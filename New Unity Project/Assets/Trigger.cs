@@ -12,10 +12,7 @@ public class Trigger : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            print("qwe");
             TriggerObject.GetComponent<Animator>().SetTrigger("ZombieUp");
-        
-
         }
     }
 
@@ -24,15 +21,6 @@ public class Trigger : MonoBehaviour
         TriggerObject.GetComponent<Animator>().SetTrigger("ZombieUp");
         Parent.transform.localPosition = new Vector3(0, -1, Parent.transform.localPosition.z);
         TriggerObject.transform.rotation = Quaternion.Euler(0, 180, 0);
-    }
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            print("qwe");
-          
-          
-        }
     }
 
 }

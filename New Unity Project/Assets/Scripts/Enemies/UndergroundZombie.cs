@@ -11,8 +11,7 @@ namespace VacuumShaders
         public class UndergroundZombie : BaseEnemy
         {
             private void OnTriggerEnter(Collider other)
-            {
-                print("qwe");
+            {             
                 DealDmg(damage);
             }
             private void FixedUpdate()

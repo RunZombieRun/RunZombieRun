@@ -39,7 +39,7 @@ public class Player_Controller : MonoBehaviour {
     public Transform centerLine;
     [SpaceAttribute(10)]
     [Header("Переменные для настройки персонажа")]
-    [TooltipAttribute("Скорость перемещения влево и вправо")]
+    [Tooltip("Скорость перемещения влево и вправо")]
     public float movingSpeed = 10f;
     
     [TooltipAttribute("Сила прыжка")]
@@ -88,10 +88,11 @@ public class Player_Controller : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        CharacterController();
+       
 #if UNITY_ANDROID
         SwipeDetection(); //запускаем детектор в апдейте, если билд под андрои
-     #endif
+   CharacterController();
+#endif
     }
 
 
@@ -115,7 +116,7 @@ public class Player_Controller : MonoBehaviour {
             animationComp.Play(moveLeftAnimation.name);
         }
     }
-  public  void Right()
+  public void Right()
     {
         //из левого края в центр
         if (state == PLAYERSTATE.Left)
@@ -147,10 +148,12 @@ public class Player_Controller : MonoBehaviour {
         //перемещение влево при нажатии клавиши
         if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A) || swipeType == SWIPETYPE.swipeLEFT)
         {
+            Debug.Log("Left");
             Left();
 		}
 		else if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D) || swipeType == SWIPETYPE.swipeRIGHT)
         {
+            Debug.Log("Right");
             Right();
 		}
 		//если изменилась позиция и мы не перемещаем персонажа в данный момент
@@ -163,7 +166,6 @@ public class Player_Controller : MonoBehaviour {
             isChangingLane = false;
         }
         if((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.Space) || swipeType == SWIPETYPE.swipeUP) && state != PLAYERSTATE.Jump){
-
             Up();
         }
         if((Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.LeftShift) || swipeType == SWIPETYPE.swipeDOWN) && state != PLAYERSTATE.Slide){
@@ -201,12 +203,7 @@ public class Player_Controller : MonoBehaviour {
         //запускаем цикл пока состяние прыжка активно
         while (state == PLAYERSTATE.Jump)
         {
-            //прыгаем с силой прыжка вверх
-            if(!playerRigibody.useGravity){
-               playerRigibody.AddForce(new Vector2(0f, jumpForce));
-            } else {
-                Debug.LogError("Use Gravity включен");
-            }
+
             //проверяем счетчик времени
             jumpTime -= Time.fixedDeltaTime;
             //если время прыжка истекло
@@ -233,11 +230,10 @@ public class Player_Controller : MonoBehaviour {
         }
     }
 
-    void SwipeDetection(){
-    
+    void SwipeDetection()
+    {
         if (Input.touchCount > 0){
-			Touch touch = Input.touches[0];
-        
+			Touch touch = Input.touches[0];     
 			switch (touch.phase) 	
 			{	
 			case TouchPhase.Began:
@@ -249,19 +245,23 @@ public class Player_Controller : MonoBehaviour {
 			case TouchPhase.Ended:
                 int swipeNumber = 0;
 				float swipeDistVertical = (new Vector3(0, touch.position.y, 0) - new Vector3(0, startPos.y, 0)).magnitude;
+                    Debug.Log("distanceV = " + swipeDistVertical);
                 if (swipeDistVertical > minSwipeDistY) 	
 				{
                 	float swipeValue = Mathf.Sign(touch.position.y - startPos.y);
-                    if (swipeValue > 0)//верхний свайg
+                        Debug.Log("SwipeValueY = " + swipeValue);
+                        if (swipeValue > 0)//верхний свайg
                     {
                         swipeNumber = 1;
+                            Up();
                         SwipeTypeDetection(swipeType, swipeNumber);
                         //return swipeType = SWIPETYPE.swipeUP;
                     }	
 					else if (swipeValue < 0)//нижний свайп
                     {
                         swipeNumber = 2;
-                        SwipeTypeDetection(swipeType, swipeNumber);
+                            PlayerSlide();
+                            SwipeTypeDetection(swipeType, swipeNumber);
                         //return swipeType = SWIPETYPE.swipeDOWN;
                     }
                     else 
@@ -270,12 +270,15 @@ public class Player_Controller : MonoBehaviour {
                     }   
 				}
 				float swipeDistHorizontal = (new Vector3(touch.position.x,0, 0) - new Vector3(startPos.x, 0, 0)).magnitude;
-                if (swipeDistHorizontal > minSwipeDistX) 
+                    Debug.Log("distanceX = " + swipeDistHorizontal);
+                    if (swipeDistHorizontal > minSwipeDistX) 
                 {
                     float swipeValue = Mathf.Sign(touch.position.x - startPos.x);
-                    if (swipeValue > 0)//правый свайп
+                        Debug.Log("SwipeValueX = " + swipeValue);
+                        if (swipeValue > 0)//правый свайп
                     {
                         swipeNumber = 3;
+                            Right();
                         SwipeTypeDetection(swipeType, swipeNumber);
                         //return swipeType = SWIPETYPE.swipeRIGHT;
                     }
@@ -283,6 +286,7 @@ public class Player_Controller : MonoBehaviour {
                     else if (swipeValue < 0)//левый свайп
                     {
                         swipeNumber = 4;
+                            Left();
                         SwipeTypeDetection(swipeType, swipeNumber);
                         //return swipeType = SWIPETYPE.swipeLEFT;
                     } 
@@ -298,11 +302,13 @@ public class Player_Controller : MonoBehaviour {
         }
     }
 
-    SWIPETYPE SwipeTypeDetection(SWIPETYPE swipeType, int swipeNumber){
+    SWIPETYPE SwipeTypeDetection(SWIPETYPE swipeType, int swipeNumber)
+    {
+        Debug.Log("State = " + swipeType);
         switch (swipeNumber)
         {
             case 1:
-                return swipeType = SWIPETYPE.swipeUP;
+                return swipeType = SWIPETYPE.swipeUP;             
                 break;
             case 2:
                 return swipeType = SWIPETYPE.swipeDOWN;

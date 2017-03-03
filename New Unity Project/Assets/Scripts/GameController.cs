@@ -23,7 +23,7 @@ public class GameController : MonoBehaviour {
         }
     }
 
-
+    [SerializeField]
     private int m_Score;
 	public  int Score
 	{
@@ -37,7 +37,35 @@ public class GameController : MonoBehaviour {
 		}
 	}
 
-	void Awake()
+    [SerializeField]
+    private float m_Stamina;
+    public float Stamina
+    {
+        get
+        {
+            return m_Stamina;
+        }
+        set
+        {
+            m_Stamina = value;
+        }
+    }
+
+    [SerializeField]
+    private float m_Armor;
+    public float Armor
+    {
+        get
+        {
+            return m_Armor;
+        }
+        set
+        {
+            m_Armor = value;
+        }
+    }
+
+    void Awake()
 	{
 		if (instance == null) 
 		{
