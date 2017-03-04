@@ -27,7 +27,7 @@ namespace VacuumShaders
                 if (collision.gameObject.tag == "Player")
                 {
                     var player = collision.gameObject.GetComponent<Runner_Player>();
-                    player.Life -= damage;
+                    player.Life -= m_Damage;
                     GetComponent<Collider>().enabled = false;
                 }
             }

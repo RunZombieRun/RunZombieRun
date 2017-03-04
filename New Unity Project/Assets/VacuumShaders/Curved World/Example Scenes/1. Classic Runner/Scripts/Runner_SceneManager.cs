@@ -70,7 +70,7 @@ namespace VacuumShaders
                 listMaterials = listMaterials.Distinct().ToList();
 
                 StartCoroutine(ZombieSpawner());
-                StartCoroutine(EnviromentSpawner());
+               // StartCoroutine(EnviromentSpawner());
             }
             IEnumerator ZombieSpawner()
             {

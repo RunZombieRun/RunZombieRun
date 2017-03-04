@@ -28,9 +28,9 @@ namespace VacuumShaders
 
             private void Start()
             {
-                StartTime = m_Time  ;
+                m_Time *= 100;
+                StartTime = m_Time;
                 m_controller = FindObjectOfType<CurvedWorld_Controller>();
-              //  SetParam(0);
                 StartCoroutine(ChangeCurves());
  
             }

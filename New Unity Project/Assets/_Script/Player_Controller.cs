@@ -89,7 +89,6 @@ public class Player_Controller : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(swipeType);
 #if UNITY_ANDROID
         SwipeDetection(); //запускаем детектор в апдейте, если билд под андрои
    CharacterController();
@@ -297,7 +296,7 @@ public class Player_Controller : MonoBehaviour {
                break;
 			}
 		} else {
-             Debug.LogError("Что то пошло не так в конце!");
+            // Debug.LogError("Что то пошло не так в конце!");
         }
     }
 

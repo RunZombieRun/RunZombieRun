@@ -16,8 +16,6 @@ public class Trigger : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            Debug.Log("qwe");
-            Debug.Log(TriggerObject.GetComponentInChildren<Animator>().speed);
             TriggerObject.GetComponentInChildren<Animator>().speed = 1f;
         }
     }

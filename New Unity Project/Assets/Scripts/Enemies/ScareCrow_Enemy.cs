@@ -16,7 +16,7 @@ namespace VacuumShaders
                 if (other.gameObject.tag == "Player")
                 {
                     Destroy(this.gameObject);
-                    DealDmg(damage);
+                    DealDmg(m_Damage);
                 }
             }
             //Then delete and place crow in scene

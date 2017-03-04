@@ -7,13 +7,15 @@ namespace VacuumShaders
 {
     namespace CurvedWorld
     {
-        [AddComponentMenu("VacuumShaders/Curved World/Example/Runner/Car")]
+       // [AddComponentMenu("VacuumShaders/Curved World/Example/Runner/Car")]
         public class UndergroundZombie : BaseEnemy
         {
             private void OnTriggerEnter(Collider other)
             {
-                print("qwe");
-                DealDmg(damage);
+                if (other.gameObject.tag == "Player")
+                {
+                    DealDmg(m_Damage);
+                }
             }
 
         }

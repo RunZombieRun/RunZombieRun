@@ -4,7 +4,6 @@ using UnityEngine;
 using System;
 
 public class GameController : MonoBehaviour {
-	public static Action ScoreChange;
 	public static Action<GameObject> DeadMinion;
 	public List<GameObject> enemies; //Если будем хранить врагов, то пригодится
 
@@ -16,7 +15,7 @@ public class GameController : MonoBehaviour {
         set
         {
             m_Health = value;
-           // CheckHP();
+            CheckHP();
         }
         get
         {
@@ -82,13 +81,11 @@ public class GameController : MonoBehaviour {
 	//Подписываем на эвенты
 	void OnEnable()
 	{
-		ScoreChange += DoSomethingWithScore;
 		DeadMinion += DeadSound;
 	}
 
 	void OnDisable()
 	{
-		ScoreChange -= DoSomethingWithScore;
 		DeadMinion -= DeadSound;
 	}
 
@@ -110,8 +107,7 @@ public class GameController : MonoBehaviour {
 	}
 
     public void Restart()
-    {
-        
+    {       
         Application.LoadLevel(0);
     }
 }

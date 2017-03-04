@@ -8,7 +8,7 @@ public abstract class BaseEnemy : MonoBehaviour
 	//Сюда записываем только поля, которые будут во всех наследниках
 	public int m_Health = 1;
 	public int m_Shield;
-	public int damage;
+	public int m_Damage;
 	public float m_Speed;
 
     public void Start()
@@ -28,7 +28,6 @@ public abstract class BaseEnemy : MonoBehaviour
 
 	public virtual void DealDmg(int damage)
 	{
-        print("1");
         GameController.instance.Health += (-damage);
 	}
 
