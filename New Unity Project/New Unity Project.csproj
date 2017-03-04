@@ -85,6 +85,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\ChangeCurvesController.cs" />
+    <Compile Include="Assets\Scripts\CameraChanger.cs" />
     <Compile Include="Assets\Scripts\Enemies\BaseEnemy.cs" />
     <Compile Include="Assets\Scripts\Enemies\EnemyFermer.cs" />
     <Compile Include="Assets\Scripts\Enemies\FirstEnemy.cs" />
