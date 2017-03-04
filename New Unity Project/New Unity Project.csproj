@@ -73,6 +73,12 @@
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Common">
+      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Common.dll</HintPath>
+    </Reference>
     <Reference Include="VacuumShaders.CurvedWorld">
       <HintPath>Assets\VacuumShaders\Curved World\Scripts\VacuumShaders.CurvedWorld.dll</HintPath>
     </Reference>
@@ -198,6 +204,7 @@
     <None Include="Assets\VacuumShaders\Curved World\Shaders\cginc\CurvedWorld_VertexLit.cginc" />
     <None Include="Assets\VacuumShaders\Curved World\Shaders\cginc\CurvedWorld_Water.cginc" />
     <None Include="Assets\VacuumShaders\Curved World\Shaders\cginc\Empty.shader" />
+    <None Include="Assets\sky5X\README.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
