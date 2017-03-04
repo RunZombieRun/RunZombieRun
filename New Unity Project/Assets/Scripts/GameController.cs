@@ -140,7 +140,7 @@ using System;
             {            
                 Runner_SceneManager.get.speed *= BoostMultiplier;
                 yield return new WaitForSeconds(time);
-                Runner_SceneManager.get.speed *= start_speed;
+                Runner_SceneManager.get.speed = start_speed;
 
             }
         }

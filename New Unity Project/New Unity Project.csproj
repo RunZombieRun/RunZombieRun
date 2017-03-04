@@ -88,6 +88,7 @@
     <Compile Include="Assets\Scripts\Entertainment\Armor.cs" />
     <Compile Include="Assets\Scripts\Entertainment\ArmorBase.cs" />
     <Compile Include="Assets\Scripts\Entertainment\BonusMove.cs" />
+    <Compile Include="Assets\Scripts\Entertainment\Boost.cs" />
     <Compile Include="Assets\Scripts\Entertainment\Brain.cs" />
     <Compile Include="Assets\Scripts\Entertainment\BrainBase.cs" />
     <Compile Include="Assets\Scripts\Entertainment\CakeBase.cs" />
