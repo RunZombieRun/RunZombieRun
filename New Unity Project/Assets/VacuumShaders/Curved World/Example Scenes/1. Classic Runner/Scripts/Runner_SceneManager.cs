@@ -86,7 +86,7 @@ namespace VacuumShaders
 
                     if (randSpawnDot == 0)
                     {
-                        zmb.transform.position = new Vector3(-3f,0, Random.Range(140, 240));
+                        zmb.transform.position = new Vector3(-5f,0, Random.Range(140, 240));
 
                     }
                     else if(randSpawnDot == 1)
@@ -95,7 +95,7 @@ namespace VacuumShaders
                     }
                     else
                     {
-                        zmb.transform.position = new Vector3(3f, 0, Random.Range(140, 240));
+                        zmb.transform.position = new Vector3(5f, 0, Random.Range(140, 240));
                         randSpawnDot = 0;                    
                     }
                     randSpawnDot++;
