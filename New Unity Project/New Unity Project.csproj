@@ -100,6 +100,7 @@
     <Compile Include="Assets\Scripts\Entertainment\PlayerBace.cs" />
     <Compile Include="Assets\Scripts\GameController.cs" />
     <Compile Include="Assets\Scripts\Static.cs" />
+    <Compile Include="Assets\Scripts\UI\GameInfoCanvas.cs" />
     <Compile Include="Assets\Trigger.cs" />
     <Compile Include="Assets\VacuumShaders\Curved World\Example Scenes\1. Classic Runner\Scripts\FPSCounter.cs" />
     <Compile Include="Assets\VacuumShaders\Curved World\Example Scenes\1. Classic Runner\Scripts\Runner_Car.cs" />

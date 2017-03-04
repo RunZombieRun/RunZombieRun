@@ -5,7 +5,11 @@ using System;
 
 public class GameController : MonoBehaviour {
 	public static Action<GameObject> DeadMinion;
-	public List<GameObject> enemies; //Если будем хранить врагов, то пригодится
+    public static Action<int> ScoreChanged;
+    public static Action<float> StaminaChanged;
+    public static Action<int> ArmorChanged;
+    public static Action<int> HealthChanged;
+    public List<GameObject> enemies; //Если будем хранить врагов, то пригодится
 
 	public static GameController instance;
     [SerializeField]
@@ -16,6 +20,7 @@ public class GameController : MonoBehaviour {
         {
             m_Health = value;
             CheckHP();
+            HealthChanged.Invoke(m_Health);
         }
         get
         {
@@ -30,6 +35,7 @@ public class GameController : MonoBehaviour {
 		set{
 			m_Score = value;
             CheckHP();
+            ScoreChanged.Invoke(m_Score);
 
         }
 		get{
@@ -44,24 +50,28 @@ public class GameController : MonoBehaviour {
         get
         {
             return m_Stamina;
+
         }
         set
         {
             m_Stamina = value;
+            StaminaChanged.Invoke(m_Stamina);
         }
     }
 
     [SerializeField]
-    private float m_Armor;
-    public float Armor
+    private int m_Armor;
+    public int Armor
     {
         get
         {
             return m_Armor;
+            
         }
         set
         {
             m_Armor = value;
+            ArmorChanged.Invoke(m_Armor);
         }
     }
 
@@ -93,6 +103,7 @@ public class GameController : MonoBehaviour {
     {
         if(m_Health <= 0)
         {
+            m_Health = 0;
             Destroy(Player_Controller.get.gameObject);
         }
     }
@@ -105,6 +116,8 @@ public class GameController : MonoBehaviour {
 		enemies.Remove (obj);
 		Debug.Log ("Minion is Dead");
 	}
+
+
 
     public void Restart()
     {       
