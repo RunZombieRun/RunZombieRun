@@ -68,6 +68,8 @@ namespace VacuumShaders
                         m_Time--;
                     }
                     m_Time = StartTime;
+                    if (i == m_rk.Length-1)
+                        i = 0;
                 }
 
             }
