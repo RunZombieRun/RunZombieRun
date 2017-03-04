@@ -12,15 +12,10 @@ namespace VacuumShaders
         {
             private void OnTriggerEnter(Collider other)
             {
+                print("qwe");
                 DealDmg(damage);
             }
-            private void Update()
-            {             
-                if (transform.position.y < -10)
-                {
-                    Destroy(this.gameObject);
-                }
-            }
+
         }
     }
 }

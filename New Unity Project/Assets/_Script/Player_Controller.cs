@@ -55,8 +55,9 @@ public class Player_Controller : MonoBehaviour {
     private Vector2 startPos;
     //возможные типы свайпа
 	enum SWIPETYPE {non, swipeUP, swipeDOWN, swipeLEFT, swipeRIGHT}
-    //возможные сохраняем в статическую переменную с типом свайпа
-	SWIPETYPE swipeType;
+    //возможные сохраняем в статическую переменную с типом свайпа7
+    [SerializeField]
+	private SWIPETYPE swipeType;
 
     void Awake()
     {
@@ -88,7 +89,7 @@ public class Player_Controller : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-       
+        Debug.Log(swipeType);
 #if UNITY_ANDROID
         SwipeDetection(); //запускаем детектор в апдейте, если билд под андрои
    CharacterController();
@@ -148,12 +149,10 @@ public class Player_Controller : MonoBehaviour {
         //перемещение влево при нажатии клавиши
         if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A) || swipeType == SWIPETYPE.swipeLEFT)
         {
-            Debug.Log("Left");
             Left();
 		}
 		else if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D) || swipeType == SWIPETYPE.swipeRIGHT)
         {
-            Debug.Log("Right");
             Right();
 		}
 		//если изменилась позиция и мы не перемещаем персонажа в данный момент
