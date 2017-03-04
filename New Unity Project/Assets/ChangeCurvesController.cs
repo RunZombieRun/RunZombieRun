@@ -10,10 +10,6 @@ namespace VacuumShaders
     {
         public class ChangeCurvesController : MonoBehaviour
         {
-            public float[] xAxisBend;
-            public float[] xBias;
-            public float[] yAxisBend;
-            public float[] yBias;
 
             public float m_Time;
 
@@ -22,7 +18,17 @@ namespace VacuumShaders
             private float shag_yAxis;
             private float shag_yBias;
             private float StartTime;
+            public Rect2[] m_rk;
+            [System.Serializable]
+            public struct Rect2
+            {
 
+                public float xAxisBend;
+                public float xBias;
+                public float yAxisBend;
+                public float yBias;
+
+            }
 
             CurvedWorld_Controller m_controller;
 
@@ -36,19 +42,19 @@ namespace VacuumShaders
             }
             void SetParam(int id)
             {
-                shag_xAxis = 2 * xAxisBend[id] / StartTime;
+                shag_xAxis = 2 * m_rk[id].xAxisBend / StartTime;
 
-                shag_xBias = 2 * xBias[id] / StartTime;
+                shag_xBias = 2 * m_rk[id].xBias / StartTime;
 
-                shag_yAxis = 2 * yAxisBend[id] / StartTime;
+                shag_yAxis = 2 * m_rk[id].yAxisBend / StartTime;
 
-                shag_yBias = 2 * yBias[id] / StartTime;
+                shag_yBias = 2 * m_rk[id].yBias / StartTime;
 
             }
 
            private IEnumerator ChangeCurves()
             {
-                for (int i = 0; i < xAxisBend.Length; i++)
+                for (int i = 0; i < m_rk.Length; i++)
                 {
                     SetParam(i);
                     while (m_Time >= 0)
