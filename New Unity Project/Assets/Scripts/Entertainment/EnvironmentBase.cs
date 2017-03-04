@@ -12,4 +12,8 @@ public class EnvironmentBase : MonoBehaviour {
     {
 
     }
+    virtual public void DoSomething()
+    {
+
+    }
 }

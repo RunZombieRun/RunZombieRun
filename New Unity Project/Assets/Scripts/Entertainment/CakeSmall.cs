@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class CakeSmall : CakeBase
 {
-    public int m_BonusSmall;
 
 
     public override void StartCake()
@@ -27,4 +26,11 @@ public class CakeSmall : CakeBase
     {
 		
 	}
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.gameObject.tag == "Player")
+    //    {
+    //        DoSomething();
+    //    }
+    //}
 }

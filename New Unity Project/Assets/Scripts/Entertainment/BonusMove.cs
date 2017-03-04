@@ -11,8 +11,8 @@ public class BonusMove : MonoBehaviour
 
     public int AddMoney;
 
-    public bool rotate;
-    public float m_MovementSpeed = 1f;
+    //public bool rotate;
+    //public float m_MovementSpeed = 1f;
 
     public bool isNegative;
     public bool isWandering;
@@ -41,7 +41,7 @@ public class BonusMove : MonoBehaviour
 
     }
 
-    void FixedUpdate()
+    /*void FixedUpdate()
     {
         if (rotate)
         {
@@ -54,5 +54,5 @@ public class BonusMove : MonoBehaviour
     {
 
         transform.Translate(Vector3.back * m_MovementSpeed * Time.deltaTime, Space.World);
-    }
+    }*/
 }
