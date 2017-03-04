@@ -12,6 +12,12 @@ ModelImporter:
     100008: Particle View 001
     100010: tractor_unwrapped
     100012: //RootNode
+    100014: front_part
+    100016: tractor
+    100018: wheel_b_l
+    100020: wheel_b_r
+    100022: wheel_f_l
+    100024: wheel_f_r
     400000: Omni001
     400002: Omni002
     400004: Omni004
@@ -19,9 +25,33 @@ ModelImporter:
     400008: Particle View 001
     400010: tractor_unwrapped
     400012: //RootNode
+    400014: front_part
+    400016: tractor
+    400018: wheel_b_l
+    400020: wheel_b_r
+    400022: wheel_f_l
+    400024: wheel_f_r
     2300000: tractor_unwrapped
+    2300002: front_part
+    2300004: tractor
+    2300006: wheel_b_l
+    2300008: wheel_b_r
+    2300010: wheel_f_l
+    2300012: wheel_f_r
     3300000: tractor_unwrapped
+    3300002: front_part
+    3300004: tractor
+    3300006: wheel_b_l
+    3300008: wheel_b_r
+    3300010: wheel_f_l
+    3300012: wheel_f_r
     4300000: tractor_unwrapped
+    4300002: tractor
+    4300004: front_part
+    4300006: wheel_f_r
+    4300008: wheel_f_l
+    4300010: wheel_b_l
+    4300012: wheel_b_r
   materials:
     importMaterials: 1
     materialName: 0
