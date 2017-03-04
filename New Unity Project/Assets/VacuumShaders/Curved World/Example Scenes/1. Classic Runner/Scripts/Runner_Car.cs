@@ -1,10 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-namespace VacuumShaders
-{
-    namespace CurvedWorld
-    {
+
         [AddComponentMenu("VacuumShaders/Curved World/Example/Runner/Car")]
         public class Runner_Car : MonoBehaviour
         {
@@ -50,5 +47,3 @@ namespace VacuumShaders
             //                                                                          //               
             //////////////////////////////////////////////////////////////////////////////
         }
-    }
-}

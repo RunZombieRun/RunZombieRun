@@ -6,10 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Collections;
 
-namespace VacuumShaders
-{
-    namespace CurvedWorld
-    {
+
         [AddComponentMenu("VacuumShaders/Curved World/Example/Runner/Scene Manager")]
         public class Runner_SceneManager : MonoBehaviour
         {
@@ -119,5 +116,3 @@ namespace VacuumShaders
                 Instantiate(Zombies[Random.Range(0, Zombies.Length)]);
             }
         }
-    }
-}
