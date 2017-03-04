@@ -251,15 +251,15 @@ public class Player_Controller : MonoBehaviour {
                         if (swipeValue > 0)//верхний свайg
                     {
                         swipeNumber = 1;
-                            Up();
-                        SwipeTypeDetection(swipeType, swipeNumber);
+                        //    Up();
+                        SwipeTypeDetection(SWIPETYPE.swipeUP);
                         //return swipeType = SWIPETYPE.swipeUP;
                     }	
 					else if (swipeValue < 0)//нижний свайп
                     {
                         swipeNumber = 2;
-                            PlayerSlide();
-                            SwipeTypeDetection(swipeType, swipeNumber);
+                        //    PlayerSlide();
+                            SwipeTypeDetection(SWIPETYPE.swipeDOWN);
                         //return swipeType = SWIPETYPE.swipeDOWN;
                     }
                     else 
@@ -276,16 +276,16 @@ public class Player_Controller : MonoBehaviour {
                         if (swipeValue > 0)//правый свайп
                     {
                         swipeNumber = 3;
-                            Right();
-                        SwipeTypeDetection(swipeType, swipeNumber);
+                        //    Right();
+                        SwipeTypeDetection(SWIPETYPE.swipeRIGHT);
                         //return swipeType = SWIPETYPE.swipeRIGHT;
                     }
                     
                     else if (swipeValue < 0)//левый свайп
                     {
                         swipeNumber = 4;
-                            Left();
-                        SwipeTypeDetection(swipeType, swipeNumber);
+                       //     Left();
+                        SwipeTypeDetection(SWIPETYPE.swipeLEFT);
                         //return swipeType = SWIPETYPE.swipeLEFT;
                     } 
                     else 
@@ -300,25 +300,29 @@ public class Player_Controller : MonoBehaviour {
         }
     }
 
-    SWIPETYPE SwipeTypeDetection(SWIPETYPE swipeType, int swipeNumber)
+    void SwipeTypeDetection(SWIPETYPE swipeType)
     {
         Debug.Log("State = " + swipeType);
-        switch (swipeNumber)
+
+        switch (swipeType)
         {
-            case 1:
-                return swipeType = SWIPETYPE.swipeUP;             
+            case SWIPETYPE.non:
+               
                 break;
-            case 2:
-                return swipeType = SWIPETYPE.swipeDOWN;
+            case SWIPETYPE.swipeUP:
+                Up();
                 break;
-            case 3:
-                return swipeType = SWIPETYPE.swipeRIGHT;
+            case SWIPETYPE.swipeDOWN:
+                PlayerSlide();
                 break;
-            case 4:
-                return swipeType = SWIPETYPE.swipeLEFT;
+            case SWIPETYPE.swipeLEFT:
+                Left();
+                break;
+            case SWIPETYPE.swipeRIGHT:
+                Right();
                 break;
             default:
-                return swipeType = SWIPETYPE.non;
+                break;
         }
     }
 }
