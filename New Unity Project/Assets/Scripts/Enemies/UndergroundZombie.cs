@@ -11,13 +11,11 @@ namespace VacuumShaders
         public class UndergroundZombie : BaseEnemy
         {
             private void OnTriggerEnter(Collider other)
-            {             
+            {
                 DealDmg(damage);
             }
-            private void FixedUpdate()
-            {
-                GetComponent<Rigidbody>().MovePosition(transform.position + Runner_SceneManager.moveVector * Runner_SceneManager.get.speed * Time.deltaTime * m_Speed);
-
+            private void Update()
+            {             
                 if (transform.position.y < -10)
                 {
                     Destroy(this.gameObject);

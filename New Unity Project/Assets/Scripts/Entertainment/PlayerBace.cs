@@ -15,12 +15,6 @@ public class PlayerBace : MonoBehaviour {
 	}
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Enemy")
-        {
-            print("Игрок печатает");
-            //SetDamage(collision.gameObject);
-            Destroy(collision.gameObject, 0.01f);
-            //Destroy(this.gameObject, 1f);
-        }
+
     }
 }

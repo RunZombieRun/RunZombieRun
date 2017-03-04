@@ -28,7 +28,7 @@ public abstract class BaseEnemy : MonoBehaviour
 
 	public virtual void DealDmg(int damage)
 	{
-        GameController.instance.Health -= damage;
+        GameController.instance.Health += (-damage);
 	}
 
 }

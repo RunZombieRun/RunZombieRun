@@ -6,21 +6,26 @@ public class Trigger : MonoBehaviour
 {
 
     public  GameObject TriggerObject;
-    public GameObject Parent;
+    public string TriggerName;
+    private void Start()
+    {
+        TriggerObject.GetComponentInChildren<Animator>().speed = 0f;
+    }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
-            TriggerObject.GetComponent<Animator>().SetTrigger("ZombieUp");
+            Debug.Log("qwe");
+            Debug.Log(TriggerObject.GetComponentInChildren<Animator>().speed);
+            TriggerObject.GetComponentInChildren<Animator>().speed = 1f;
         }
     }
 
     void Up()
     {
         TriggerObject.GetComponent<Animator>().SetTrigger("ZombieUp");
-        Parent.transform.localPosition = new Vector3(0, -1, Parent.transform.localPosition.z);
-        TriggerObject.transform.rotation = Quaternion.Euler(0, 180, 0);
+
     }
 
 }

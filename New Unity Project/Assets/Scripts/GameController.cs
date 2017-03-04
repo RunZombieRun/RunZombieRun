@@ -16,6 +16,7 @@ public class GameController : MonoBehaviour {
         set
         {
             m_Health = value;
+           // CheckHP();
         }
         get
         {
@@ -110,6 +111,7 @@ public class GameController : MonoBehaviour {
 
     public void Restart()
     {
+        
         Application.LoadLevel(0);
     }
 }
