@@ -25,8 +25,6 @@ namespace VacuumShaders
 
             public GameObject[] Zombies;
 
-            public GameObject[] Enviroment;
-
             static public float chunkSize = 60;
             static public Vector3 moveVector = new Vector3(0, 0, -1);
             static public GameObject lastChunk;
@@ -70,7 +68,6 @@ namespace VacuumShaders
                 listMaterials = listMaterials.Distinct().ToList();
 
                 StartCoroutine(ZombieSpawner());
-               // StartCoroutine(EnviromentSpawner());
             }
             IEnumerator ZombieSpawner()
             {
@@ -79,11 +76,9 @@ namespace VacuumShaders
                 {
                     int randSpawnDot = Random.Range(0, 3);
                     yield return new WaitForSeconds(2f);
-
-                    GameObject zmb =  Instantiate(Zombies[0]) as GameObject;
+                    int rnd = Random.Range(0, Zombies.Length);
+                    GameObject zmb =  Instantiate(Zombies[rnd]) as GameObject;
                    
-
-
                     if (randSpawnDot == 0)
                     {
                         zmb.transform.position = new Vector3(-5f,0, Random.Range(140, 240));
@@ -101,30 +96,6 @@ namespace VacuumShaders
                     randSpawnDot++;
                 }
             }
-            IEnumerator EnviromentSpawner()
-            {
-
-                for (;;)
-                {
-                    int randSpawnDot = Random.Range(0, 2);
-                    yield return new WaitForSeconds(3f);
-
-                    GameObject zmb = Instantiate(Enviroment[0]) as GameObject;
-
-                    if (randSpawnDot == 0)
-                    {
-                        zmb.transform.position = new Vector3(-6.6f, 0, Random.Range(140, 240));
-
-                    }
-                    else if (randSpawnDot == 1)
-                    {
-                        zmb.transform.position = new Vector3(6.6f, 0, Random.Range(140, 240));
-                        randSpawnDot = 0;
-                    }
-                    randSpawnDot++;
-                }
-            }
-
             //////////////////////////////////////////////////////////////////////////////
             //                                                                          // 
             //Custom Functions                                                          //
