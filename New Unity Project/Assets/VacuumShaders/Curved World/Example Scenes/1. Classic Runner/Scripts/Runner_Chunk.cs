@@ -21,7 +21,7 @@ public class Runner_Chunk : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (transform.position.z < -100)
-            Runner_SceneManager.get.DestroyChunk(this);
+     //   if (transform.position.z < -100)
+      //      Runner_SceneManager.get.DestroyChunk(this);
     }
 }

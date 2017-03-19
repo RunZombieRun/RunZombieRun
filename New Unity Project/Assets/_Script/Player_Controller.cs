@@ -58,6 +58,14 @@ public class Player_Controller : MonoBehaviour {
     //возможные сохраняем в статическую переменную с типом свайпа7
     [SerializeField]
 	private SWIPETYPE swipeType;
+    public PLAYERSTATE State
+    {
+        get
+        {
+            return state;
+        }
+    }
+
 
     void Awake()
     {
@@ -239,8 +247,8 @@ public class Player_Controller : MonoBehaviour {
                 Debug.LogError("Свайп еще не определился!");
 				break;
                 
-                
-			case TouchPhase.Ended:
+               
+			case TouchPhase.Moved:
                 int swipeNumber = 0;
 				float swipeDistVertical = (new Vector3(0, touch.position.y, 0) - new Vector3(0, startPos.y, 0)).magnitude;
                     Debug.Log("distanceV = " + swipeDistVertical);

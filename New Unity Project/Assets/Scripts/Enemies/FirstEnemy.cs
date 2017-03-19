@@ -22,13 +22,14 @@ namespace VacuumShaders
                 base.Die();
             }
 
-            private void OnCollisionEnter(Collision collision)
+            private void OnTriggerEnter(Collider collision)
             {
                 if (collision.gameObject.tag == "Player")
                 {
-                    var player = collision.gameObject.GetComponent<Runner_Player>();
-                    player.Life -= m_Damage;
-                    GetComponent<Collider>().enabled = false;
+                    if (Player_Controller.get.State != Player_Controller.PLAYERSTATE.Jump)
+                    {
+                        DealDmg(m_Damage);
+                    }
                 }
             }
 
